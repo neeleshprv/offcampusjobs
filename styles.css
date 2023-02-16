@@ -1,0 +1,67 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+:root{
+    --max-radius:10px;
+    --max-padding:5px;
+}
+body{
+    overflow-x: hidden;
+}
+.grid-container{
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 0.3fr 0.3fr 1.2fr 1.2fr 1.2fr 2.9fr;
+    grid-template-areas: "nav nav nav nav" "main main main main" "content content content content" ;
+    grid-gap: 0.2rem;
+    
+}
+
+nav{
+    grid-area: nav;
+    border-bottom-right-radius: var(--max-radius);
+    border-bottom-left-radius: var(--max-radius);
+    padding-top: var(--max-padding);
+}
+
+main{
+    grid-area: main;
+    border-radius: var(--max-radius);
+    padding-top: var(--max-padding);
+}
+.main-buttons{
+    text-align: center;
+
+}
+.buttons a{
+    text-decoration: none;
+}
+.buttons a:hover{
+    color: white;
+}
+.btn{
+    margin-top: 3px;
+}
+
+#content{
+    grid-area: content;
+    border-radius: var(--max-radius);
+    padding-top: var(--max-padding);
+    
+}
+
+
+
+/* Mobile Screen */
+@media only screen and (max-width: 550px){
+    .grid-container{
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.3fr 0.4fr 1.0fr;
+        grid-template-areas: "nav" "main" "content" ;
+        overflow-x: hidden !important;
+    }
+
+
+}
